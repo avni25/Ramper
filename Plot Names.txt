@@ -1,0 +1,103 @@
+ // ----------------------A1-----------------------------------------------
+
+        A1DomesticGates.add(new Plot("4","B737",1,null));
+        A1DomesticGates.add(new Plot("5","B737",1,null));
+        A1DomesticGates.add(new Plot("6","B737",1,null));
+        A1DomesticGates.add(new Plot("7","B737",1,null));
+
+        A1Gates.add(new Plot("8","B737",1,null));
+        A1Gates.add(new Plot("9","B752",1,null));
+        A1Gates.add(new Plot("10","B772",1,null));
+        A1Gates.add(new Plot("11","B772",1,null));
+        A1Gates.add(new Plot("12","B772",1,null));
+        A1Gates.add(new Plot("13","B772",1,null));
+        A1Gates.add(new Plot("14","B752",1,null));
+        A1Gates.add(new Plot("15","B737",1,null));
+
+        A1DomesticLarge.add(new Plot("1","B753",1,null));
+        A1DomesticLarge.add(new Plot("3","B753",1,null));
+        A1DomesticLarge.add(new Plot("94","B753",1,null));
+        A1DomesticLarge.add(new Plot("93","B753",1,null));
+        A1DomesticLarge.add(new Plot("92","B753",1,null));
+        A1DomesticLarge.add(new Plot("91","B753",1,null));
+
+        A1Domestic.add(new Plot("39","B737",1,null));
+        A1Domestic.add(new Plot("38","B737",1,null));
+        A1Domestic.add(new Plot("37","B737",1,null));
+        A1Domestic.add(new Plot("36","B737",1,null));
+        A1Domestic.add(new Plot("35","B737",1,null));
+
+
+        A1.add(new Plot("90","F900",1,null));
+        A1.add(new Plot("34","B737",1,null));
+        A1.add(new Plot("33","B737",1,null));
+        A1.add(new Plot("32","B737",1,null));
+        A1.add(new Plot("134","B737",1,null));
+        A1.add(new Plot("133","B737",1,null));
+        A1.add(new Plot("132","B737",1,null));
+        A1.add(new Plot("131","B737",1,null));
+        A1.add(new Plot("130","B737",1,null));
+        A1.add(new Plot("129","B737",1,null));
+        A1.add(new Plot("128","B737",1,null));
+        A1.add(new Plot("127","B737",1,null));
+        A1.add(new Plot("126","B737",1,null));
+        A1.add(new Plot("125","B737",1,null));
+        A1.add(new Plot("124","B737",1,null));
+        A1.add(new Plot("2","B753",1,null));
+        A1.add(new Plot("120","A330",1,null));
+        A1.add(new Plot("121","A330",1,null));
+        A1.add(new Plot("122","A330",1,null));
+        A1.add(new Plot("123","A330",1,null));
+
+        // ----------------------A2-----------------------------------------------
+        A2Gates.add(new Plot("60","B737",2,null));
+        A2Gates.add(new Plot("61","B752",2,null));
+        A2Gates.add(new Plot("62","B747",2,null));
+        A2Gates.add(new Plot("63","B747",2,null));
+        A2Gates.add(new Plot("64","B747",2,null));
+        A2Gates.add(new Plot("65","B747",2,null));
+        A2Gates.add(new Plot("66","B752",2,null));
+        A2Gates.add(new Plot("67","B737",2,null));
+
+        A2.add(new Plot("40","B737",2,null));
+        A2.add(new Plot("41","B737",2,null));
+        A2.add(new Plot("42","B737",2,null));
+        A2.add(new Plot("43","B737",2,null));
+        A2.add(new Plot("44","B737",2,null));
+        A2.add(new Plot("45","B737",2,null));
+        A2.add(new Plot("46","B737",2,null));
+
+        A2.add(new Plot("47","B762",2,null));
+        A2.add(new Plot("48","B762",2,null));
+        A2.add(new Plot("49","B762",2,null));
+        A2.add(new Plot("50","B762",2,null));
+        A2.add(new Plot("51","B762",2,null));
+        A2.add(new Plot("54","B762",2,null));
+        A2.add(new Plot("55","B762",2,null));
+        A2.add(new Plot("56","B762",2,null));
+
+        A2.add(new Plot("68","B747",2,null));
+        A2.add(new Plot("69","B747",2,null));
+        A2.add(new Plot("70","B747",2,null));
+        A2.add(new Plot("224","B747",2,null));
+        A2.add(new Plot("225","B747",2,null));
+        A2.add(new Plot("226","B747",2,null));
+
+        // ----------------------A3-----------------------------------------------
+        A3.add(new Plot("301","B737",3,null));
+        A3.add(new Plot("302","B737",3,null));
+        A3.add(new Plot("303","B737",3,null));
+        A3.add(new Plot("304","B737",3,null));
+        A3.add(new Plot("305","B737",3,null));
+        A3.add(new Plot("306","B737",3,null));
+        A3.add(new Plot("307","B737",3,null));
+
+        A3.add(new Plot("308","B763",3,null));
+        A3.add(new Plot("309","B763",3,null));
+        A3.add(new Plot("310","B763",3,null));
+        A3.add(new Plot("311","B763",3,null));
+        A3.add(new Plot("312","B763",3,null));
+        A3.add(new Plot("313","B763",3,null));
+        A3.add(new Plot("314","B763",3,null));
+        A3.add(new Plot("315","B763",3,null));
+        A3.add(new Plot("316","B763",3,null));

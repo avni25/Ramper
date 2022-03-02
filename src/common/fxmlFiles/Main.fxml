@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#handleOnKeyReleased" prefHeight="600.0" prefWidth="1300.0" stylesheets="@style1.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="common.controllerFiles.MainController">
+   <children>
+      <Button layoutX="14.0" layoutY="538.0" mnemonicParsing="false" onAction="#onClickMenuItemAdd" prefHeight="25.0" prefWidth="97.0" text="Add Flight" />
+      <TableView fx:id="flightListTable" layoutX="295.0" layoutY="84.0" onMouseClicked="#TableOnClick" prefHeight="503.0" prefWidth="998.0">
+          <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+        <columns>
+          <TableColumn prefWidth="75.0" text="name">
+             <cellValueFactory>
+                <PropertyValueFactory property="name" />
+             </cellValueFactory>
+          </TableColumn>
+           <TableColumn prefWidth="75.0" text="bodyType">
+              <cellValueFactory>
+                 <PropertyValueFactory property="bodyType" />
+              </cellValueFactory>
+           </TableColumn>
+           <TableColumn prefWidth="75.0" text="registration">
+              <cellValueFactory>
+                 <PropertyValueFactory property="registration" />
+              </cellValueFactory>
+           </TableColumn>
+            <TableColumn prefWidth="75.0" text="STA">
+               <cellValueFactory>
+                  <PropertyValueFactory property="STA" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="STD">
+               <cellValueFactory>
+                  <PropertyValueFactory property="STD" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="depCallSign">
+               <cellValueFactory>
+                  <PropertyValueFactory property="depCallSign" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="from">
+               <cellValueFactory>
+                  <PropertyValueFactory property="from" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="to">
+               <cellValueFactory>
+                  <PropertyValueFactory property="to" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="hnd">
+               <cellValueFactory>
+                  <PropertyValueFactory property="hnd" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="54.0" text="terminal">
+               <cellValueFactory>
+                  <PropertyValueFactory property="terminal" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="plot">
+               <cellValueFactory>
+                  <PropertyValueFactory property="plot" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="companyName">
+               <cellValueFactory>
+                  <PropertyValueFactory property="companyName" />
+               </cellValueFactory>
+            </TableColumn>
+        </columns>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#AllocSelectedFlight" text="Allocate Park" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadFlightTable" text="Refresh" />
+                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteParkOfSelectedFlight" text="Delete park" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <Button layoutX="650.0" layoutY="49.0" mnemonicParsing="false" onAction="#loadFlightTable" text="Load List" />
+      <Button layoutX="578.0" layoutY="49.0" mnemonicParsing="false" onAction="#deleteFlight" text="Delete" />
+      <TextField fx:id="textCallSign" layoutX="96.0" layoutY="114.0" prefHeight="25.0" prefWidth="164.0" />
+      <TextField fx:id="textReg" layoutX="96.0" layoutY="182.0" prefHeight="25.0" prefWidth="164.0" />
+      <DatePicker fx:id="DateSTA" layoutX="155.0" layoutY="219.0" prefHeight="25.0" prefWidth="106.0" />
+      <DatePicker fx:id="DateSTD" layoutX="155.0" layoutY="253.0" prefHeight="25.0" prefWidth="106.0" />
+      <ComboBox fx:id="comboType" layoutX="95.0" layoutY="147.0" prefHeight="25.0" prefWidth="97.0" />
+      <TextField fx:id="textDepSign" layoutX="96.0" layoutY="288.0" prefHeight="25.0" prefWidth="164.0" />
+      <TextField fx:id="textFrom" layoutX="96.0" layoutY="321.0" prefHeight="25.0" prefWidth="164.0" />
+      <TextField fx:id="textTo" layoutX="96.0" layoutY="354.0" prefHeight="25.0" prefWidth="164.0" />
+      <ComboBox fx:id="comboHND" layoutX="96.0" layoutY="390.0" prefHeight="25.0" prefWidth="97.0" />
+      <ComboBox fx:id="comboTerminal" layoutX="95.0" layoutY="426.0" prefHeight="25.0" prefWidth="97.0" />
+      <ComboBox fx:id="comboPark" layoutX="95.0" layoutY="461.0" prefHeight="25.0" prefWidth="97.0" />
+      <TextField fx:id="textCompany" layoutX="96.0" layoutY="495.0" prefHeight="25.0" prefWidth="164.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="118.0" prefHeight="17.0" prefWidth="77.0" text="Call Sign:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="150.0" prefHeight="17.0" prefWidth="77.0" text="Type:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="1.0" layoutY="185.0" prefHeight="20.0" prefWidth="90.0" text="Registration:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="221.0" prefHeight="17.0" prefWidth="77.0" text="STA:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="255.0" prefHeight="17.0" prefWidth="77.0" text="STD:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="290.0" prefHeight="17.0" prefWidth="77.0" text="DEP Sign:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="324.0" prefHeight="17.0" prefWidth="77.0" text="From:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="357.0" prefHeight="17.0" prefWidth="77.0" text="To:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="393.0" prefHeight="17.0" prefWidth="77.0" text="HND:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="429.0" prefHeight="17.0" prefWidth="77.0" text="Terminal:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="464.0" prefHeight="17.0" prefWidth="77.0" text="Park:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="498.0" prefHeight="17.0" prefWidth="77.0" text="Company:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textSTDHour" layoutX="96.0" layoutY="253.0" prefHeight="25.0" prefWidth="50.0" />
+      <TextField fx:id="textSTAHour" layoutX="96.0" layoutY="219.0" prefHeight="25.0" prefWidth="50.0" />
+      <MenuBar layoutX="1.0" layoutY="2.0" minWidth="-Infinity" prefHeight="25.0" prefWidth="1300.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#setExcelFileURL" text="Load Excel File" />
+                <MenuItem mnemonicParsing="false" onAction="#TableOnClick" text="Load Plots" />
+                <MenuItem mnemonicParsing="false" onAction="#onClickButton_SaveDailyToDatabase" text="Save Daily" />
+                <MenuItem mnemonicParsing="false" onAction="#onClickButton_CleanDailyList" text="Clean Daily List" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveFlightsButton" text="Save Flights" />
+                <MenuItem mnemonicParsing="false" onAction="#cleanPlotsFlight" text="Clean Plot Flights" />
+                <MenuItem mnemonicParsing="false" onAction="#cleanPlotsFromFlight" text="Clean Flights plot" />
+                <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Chart">
+            <items>
+                <MenuItem mnemonicParsing="false" onAction="#onClick_GoToChart" text="Go to Chart" />
+                <MenuItem mnemonicParsing="false" text="Add New Plot" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClick_EditPlots" text="Edit Plot" />
+                  <MenuItem mnemonicParsing="false" text="Add New Type" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Archive">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#onClick_GoToArchive" text="Go to Archive" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClick_AddToArchive" text="Add to Archive" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClick_AddAllToArchive" text="Add All to Archive" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClickButton_CleanArchiveList" text="Clean Archive" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClick_Statistics" text="Statistics" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+                <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="1171.0" layoutY="49.0" mnemonicParsing="false" onAction="#AllocButton" prefHeight="25.0" prefWidth="63.0" text="Alloc" />
+      <Button layoutX="193.0" layoutY="538.0" mnemonicParsing="false" onAction="#printButton" text="PrintLn" />
+      <TextField fx:id="textSearch" layoutX="295.0" layoutY="49.0" />
+      <Button layoutX="495.0" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Search" />
+      <Button layoutX="129.0" layoutY="538.0" mnemonicParsing="false" onAction="#updateSelectedFlight" text="Update" />
+      <ComboBox fx:id="comboTimeDif" layoutX="1047.0" layoutY="49.0" prefHeight="25.0" prefWidth="63.0" />
+      <Label layoutX="1110.0" layoutY="53.0" text="min" />
+      <ComboBox fx:id="comboAllocFrom" layoutX="856.0" layoutY="49.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label layoutX="821.0" layoutY="53.0" text="from" />
+      <Label layoutX="939.0" layoutY="53.0" text="to" />
+      <ComboBox fx:id="comboAllocTo" layoutX="950.0" layoutY="49.0" prefHeight="25.0" prefWidth="77.0" />
+      <Label fx:id="lableTime" layoutX="23.0" layoutY="53.0" text="Label" />
+   </children>
+</Pane>

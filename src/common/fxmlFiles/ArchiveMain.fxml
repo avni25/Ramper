@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="600.0" prefWidth="1200.0" stylesheets="@style1.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="common.controllerFiles.ArchiveMain">
+
+    <TableView fx:id="ArchiveTable" layoutY="90.0" prefHeight="503.0" prefWidth="1200.0">
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+        <columns>
+
+            <TableColumn prefWidth="75.0" text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Type">
+                <cellValueFactory>
+                    <PropertyValueFactory property="bodyType" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Reg">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Registration" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="STA">
+                <cellValueFactory>
+                    <PropertyValueFactory property="STA" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="STD">
+                <cellValueFactory>
+                    <PropertyValueFactory property="STD" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="DepNumber">
+                <cellValueFactory>
+                    <PropertyValueFactory property="DepCallSign" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="From">
+                <cellValueFactory>
+                    <PropertyValueFactory property="from" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="TTo">
+                <cellValueFactory>
+                    <PropertyValueFactory property="to" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Hnd">
+                <cellValueFactory>
+                    <PropertyValueFactory property="hnd" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="54.0" text="Ter">
+                <cellValueFactory>
+                    <PropertyValueFactory property="terminal" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Park">
+                <cellValueFactory>
+                    <PropertyValueFactory property="Plot" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="75.0" text="Company">
+                <cellValueFactory>
+                    <PropertyValueFactory property="companyName" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <contextMenu>
+            <ContextMenu>
+                <items>
+                    <MenuItem mnemonicParsing="false" text="Allocate Park" />
+                    <MenuItem mnemonicParsing="false" text="Refresh" />
+                    <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                    <MenuItem mnemonicParsing="false" text="Delete park" />
+                </items>
+            </ContextMenu>
+        </contextMenu>
+    </TableView>
+   <TextField fx:id="textSearchCallSign" layoutX="578.0" layoutY="60.0" onKeyTyped="#filterByCallSign" prefHeight="25.0" prefWidth="142.0" />
+   
+   <Label fx:id="labelResult" layoutX="734.0" layoutY="64.0" prefHeight="17.0" prefWidth="275.0" text="" />
+   <RadioButton fx:id="radCallSign" layoutX="14.0" layoutY="64.0" mnemonicParsing="false" selected="true" text="CallSign">
+      <toggleGroup>
+         <ToggleGroup fx:id="bg" />
+      </toggleGroup></RadioButton>
+   <RadioButton fx:id="radType" layoutX="92.0" layoutY="64.0" mnemonicParsing="false" text="Type" toggleGroup="$bg" />
+   <RadioButton fx:id="radReg" layoutX="156.0" layoutY="64.0" mnemonicParsing="false" text="Reg" toggleGroup="$bg" />
+   <RadioButton fx:id="radTer" layoutX="214.0" layoutY="64.0" mnemonicParsing="false" text="Ter" toggleGroup="$bg" />
+   <RadioButton fx:id="radHND" layoutX="272.0" layoutY="64.0" mnemonicParsing="false" text="HND" toggleGroup="$bg" />
+    <RadioButton fx:id="radPark" layoutX="332.0" layoutY="64.0" mnemonicParsing="false" text="Park" toggleGroup="$bg" />
+    <RadioButton fx:id="radFrom" layoutX="392.0" layoutY="64.0" mnemonicParsing="false" text="From" toggleGroup="$bg" />
+    <RadioButton fx:id="radTo" layoutX="452.0" layoutY="64.0" mnemonicParsing="false" text="To" toggleGroup="$bg" />
+
+</Pane>
